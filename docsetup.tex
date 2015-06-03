@@ -1,0 +1,65 @@
+\usepackage[norsk]{babel} %gir oss norske oversettelser
+\addto\captionsnorsk{%
+  \renewcommand\appendixname{Vedlegg}
+  \renewcommand\appendixpagename{Vedlegg}
+  \renewcommand\appendixtocname{Vedlegg}
+}
+
+\addto\extrasnorsk{%
+  \def\chapterautorefname{Kapittel}%
+}
+
+
+
+\usepackage{pdfpages} % slik at pdf filer kan legges til i rapporten
+
+\usepackage[utf8]{inputenc}
+\usepackage{todonotes} %gjør det mulig å legge til todo-notater
+\usepackage[pdftex]{hyperref} %gjør det mulig å skrive nettadresser
+\newcommand\fnurl[2]{%
+  \href{#2}{#1}\footnote{\url{#2}}%
+} %nettadresser i fotnoter
+\usepackage{graphicx} %gir støtte for bilder
+\usepackage[font={small,it}]{caption} %gjør bildeteksten annerledes enn annen tekst (mindre og i kursiv)
+\usepackage{mdwlist} %gjør det mulig å suspende og resume enumerate lister
+
+\usepackage[toc,page]{appendix} %for å lage vedlegg
+
+\usepackage{tabularx}
+\usepackage{booktabs}%for å få finere tabeller
+
+{\renewcommand{\arraystretch}{1.5}
+\usepackage{framed} % lage boxer
+
+%\usepackage[hang]{subfigure} % gjør det mulig å ha to bilder i en figur
+\usepackage{subcaption}
+\usepackage[acronym, toc]{glossaries}
+\makeglossaries
+\usepackage{longtable} %gjør det mulig å ha tabeller som går over flere sider
+\usepackage{multirow} %gjør det mulig med multirows
+
+\usepackage{parskip} %gir avsnitt med mellomrom mellom linjene istedenfor sånne teite innrykk
+\usepackage{microtype} %gjør at linjeskift skjer på bedre steder
+\usepackage{float}
+\usepackage[T1]{fontenc}
+
+\usepackage[babel=true]{csquotes}
+
+\usepackage[
+    backend=biber
+     ,style=authoryear    % Alphabeticalsch
+     %,style=numeric-comp  % numerical-compressed
+     ,sorting=none        % no sorting
+     ,sortcites=true      % some other example options ...
+     ,block=none
+     ,indexing=false
+     ,citereset=none
+     ,isbn=true
+     ,url=true
+     ,doi=true            % prints doi
+     ,natbib=true         % if you need natbib functions
+]{biblatex}
+\bibliography{mylib}
+
+\usepackage{setspace} %for p kunen øke linjeavstanden
+\onehalfspacing %øker linjeavstanden

@@ -1,0 +1,97 @@
+\documentclass[pdftex,10pt,b5paper,twoside]{book}
+\usepackage{geometry} 	% Better geometry
+\geometry{b5paper}
+\input{docsetup.tex}
+
+
+\newcommand{\thesisAuthor}{Anette Ellingsberg, Dagrun Haugland og Hanne Kottum}
+\newcommand{\thesisTitle}{Visualisering av personlig legemiddelinformasjon}
+\newcommand{\thesisType}{MASTEROPPGAVE}
+\newcommand{\thesisDate}{Vår 2015}
+\newcommand{\thesisRQ}{\begin{quote} Kan en visuell fremstilling av personlig legemiddelinformasjon gi pasienter raskere svar på spørsmål, og mer korrekt kunnskap, om interaksjoner og bivirkninger knyttet til egne legemidler, enn tekst i pakningsvedlegg?\end{quote}}
+% PDF info
+\hypersetup{pdfauthor={\thesisAuthor}}
+\hypersetup{pdftitle={\thesisTitle}}
+\hypersetup{pdfsubject={\thesisType}}
+
+\raggedbottom
+\begin{document}
+
+%Title page (This is generate automatically from the commands above)
+\include{forside} % Forside
+
+
+\thispagestyle{empty}
+
+\cleardoublepage
+
+
+%% PART 1 -- ting som kommer før innholdsfortegnelse
+\pagenumbering{gobble}
+\input{sammendrag.tex}
+\input{abstract.tex}
+\input{forord.tex}
+
+
+%% PART 2 Innholdsfortegnelse
+\input{list.tex} %%lager innholdsfortegnelse
+
+%ordliste og forkortelser:
+\input{definisjoner.tex}
+\input{forkortelser.tex}
+\glsaddallunused
+\printglossary
+\printglossary[type=\acronymtype, title={Forkortelser}]
+
+%Liste over tabeller
+\listoftables
+\addcontentsline{toc}{chapter}{Liste over tabeller}
+\clearpage
+
+%Liste over figurer
+\listoffigures									
+\addcontentsline{toc}{chapter}{Liste over figurer}
+\clearpage
+
+%% PART 3 -- Kapitlene
+\pagenumbering{arabic}
+\input{innledning}
+\input{bakgrunn_helsefaglig} 
+\input{bakgrunn}    
+\input{dagenssituasjon}
+\input{eksperimentdesign}
+\input{litteraturstudium}
+\input{utviklingsmetoder}
+\input{utviklingAvPrototype}
+\input{gjennomforing}
+\input{resultat}
+\input{resultat2_analyse}
+\input{diskusjon}
+\input{konklusjon}
+\input{viderearbeid}
+
+%% PART 4 -- referanser
+\input{referanser.tex}	%% Referanser kan endres i "mylib.bib"
+
+%% PART 5 -- vedlegg
+\begin{appendices}
+\input{vedlegg/lillian}
+\input{vedlegg/lars}
+\input{vedlegg/kaare}
+\input{vedlegg/haakon}
+\input{vedlegg/klara}
+\input{vedlegg/oppgaver1stWorshop}
+\input{vedlegg/interview1stWorkshop}
+\input{vedlegg/kaareHistorie}
+\input{vedlegg/brukertest}
+\input{vedlegg/utformingTest}
+\input{vedlegg/samtykke}
+\input{vedlegg/demografi}
+\input{vedlegg/paastander}
+\input{vedlegg/SUSPak}
+\input{vedlegg/SUSMM}
+\input{vedlegg/HEFE}
+\end{appendices}
+
+
+\end{document}
